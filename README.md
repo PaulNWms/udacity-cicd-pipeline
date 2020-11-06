@@ -2,8 +2,6 @@
 
 ![Python application test with Github Actions](https://github.com/PaulNWms/udacity-cicd-pipeline/workflows/Python%20application%20test%20with%20Github%20Actions/badge.svg)
 
-~~<TODO: complete this with an overview of your project>~~
-
 This project is a template implementation of a devops CI/CD pipeline.  Upon code checkin, the project is linted, built and API tested.  If all these are successful, a service is deployed to a live server.  The target server could be in a dev, staging or production environment.
 
 A sample flask service is provided.  This is a placeholder; the intention is to replace it with your own microservice.
@@ -21,13 +19,7 @@ A [Trello](https://trello.com/b/ySyI22ET/ci-cd-pipeline) board was created and t
 (**Note to grader:** the Trello board was left in an incomplete state.  It's not much to look at if everything's in the _Done_ column...)
 
 
-~~<TODO: Project Plan~~
-
-* ~~A link to a Trello board for the project~~
-
-* ~~A link to a spreadsheet that includes the original and final project plan>~~
-
-As mentioned in lecture, the management process overhead should be right-sized for the project.  But in this case, part of the assignment is the application of agile methods, so it's a bit process-heavy by design.
+As mentioned in lecture, the management process overhead should be right-sized for the project.  But in this case, part of the assignment is the application of agile methods, so it's a bit process-heavy, by design.
 
 ## Instructions
 
@@ -40,9 +32,6 @@ Prerequisites:
 - basic familiarity with all 3 environments
 
 This CI/CD pipeline exists entirely in GitHub and Azure, so there is no need to clone the repository locally in the setup process.
-
-~~<TODO:~~
-~~* Architectural Diagram (Shows how key parts of the system work)>~~
 
 ![CI/CD Process Flow](images/CICD-process-flow.png)
 
@@ -188,41 +177,14 @@ Now go back to the Azure Cloud Shell and check to make sure the microservice act
 ![](images/Screenshot-final-test.png)
 
 
-
-
-
-
-<TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
-
-* ~~Project running on Azure App Service~~
-
-* ~~Project cloned into Azure Cloud Shell~~
-
-* ~~Passing tests that are displayed after running the `make all` command from the `Makefile`~~
-
-* ~~Output of a test run~~
-
-* ~~Successful deploy of the project in Azure Pipelines.  [Note the official documentation should be referred to and double checked as you setup CI/CD](https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/python-webapp?view=azure-devops).~~
-
-* ~~Running Azure App Service from Azure Pipelines automatic deployment~~
-
-* ~~Successful prediction from deployed flask app in Azure Cloud Shell.  [Use this file as a template for the deployed prediction](https://github.com/udacity/nd082-Azure-Cloud-DevOps-Starter-Code/blob/master/C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/make_predict_azure_app.sh).
-The output should look similar to this:~~
-
-```bash
-udacity@Azure:~$ ./make_predict_azure_app.sh
-Port: 443
-{"prediction":[20.35373177134412]}
-```
-
-* ~~Output of streamed log files from deployed application~~
-
-> 
-
 ## Enhancements
 
-<TODO: A short description of how to improve the project in the future>
+There a number of ways to improve the project in the future:
+- Basic cleanup - remove dead code
+- Instead of having the user run through the Azure Pipeline wizard, find a way he can use the existing `azure-pipelines.yml`.
+- The main purpose of this assignment (I think) is to demonstrate that we know how to manually create an Azure Pipeline using the web UI.  This UI in turn drives a REST API, which is [documented](https://docs.microsoft.com/en-us/rest/api/azure/devops/build/definitions/create?view=azure-devops-rest-4.1).  In other words, the process could be scripted.
+- As target environments come and go, corresponding devops pipelines may want to come and go with them.  To me this seems like an unusual scenario; however, there actually is an [Azure DevOps provider for Terraform](https://techcommunity.microsoft.com/t5/itops-talk-blog/how-to-use-terraform-to-create-azure-devops-projects/ba-p/1555471).  Judging by its version number, it's probably not yet production quality.
 
 ## Demo 
 
-<TODO: Add link Screencast on YouTube>
+And last but not least, here is the [YouTube video](https://youtu.be/Fsn5DOfTtDM).

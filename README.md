@@ -176,6 +176,9 @@ Now go back to the Azure Cloud Shell and check to make sure the microservice act
 
 ![](images/Screenshot-final-test.png)
 
+As a fun bonus, the project contains a locust file `locustfile.py` which you can use to max out the F1 tier Azure App!
+
+![](images/Screenshot-locust.png)
 
 ## Enhancements
 

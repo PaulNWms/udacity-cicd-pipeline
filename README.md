@@ -71,7 +71,11 @@ As shown in the diagram, the build performed by the GitHub Action is redundant. 
 
 **Sanity check:** You should see the prompt change to reflect the virtual environment.
 
-4. Build the project with `make all`.
+4. Build the project.
+```bash
+cd udacity-cicd-pipeline
+make all
+```
 ![venv](images/Screenshot-make-all.png)
 
 **Sanity check:** The project should build without errors.

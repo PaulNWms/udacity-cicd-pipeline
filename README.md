@@ -71,22 +71,9 @@ As shown in the diagram, the build performed by the GitHub Action is redundant. 
 
 **Sanity check:** You should see the prompt change to reflect the virtual environment.
 
-4. Build the project.
-(**Note to grader:** Please see `images/Screenshot-make-all1.png` and `Screenshot-make-all2.png` for the full output.)<br/>
-```bash
-$ cd <CI/CD project>
-$ make all
-pip install --upgrade pip &&\
-        pip install -r requirements.txt
-...
-pylint --disable=R,C,W1203,W0702 app.py
+4. Build the project with `make all`.
+![venv](images/Screenshot-make-all.png)
 
---------------------------------------------------------------------
-Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
-
-#python -m pytest -vv --cov=myrepolib tests/*.py
-#python -m pytest --nbval notebook.ipynb
-```
 **Sanity check:** The project should build without errors.
 
 5. Run the microservice 'locally' (i.e. in the Cloud Shell).
@@ -102,7 +89,8 @@ This will make it available over the internet.  Equally important, it will impli
     2. Pick a name for your microservice.  This name will appear in the publicly available URL.
     3. Replace `<yourappname>` in `make_predict_azure_app.sh`
     4. Create the resource group and VM, upload the contents of the current directory and launch flask with `az webapp up`.  You will use the name for this command as well.  (here it's `udacity-flask-ml-service`)
-    ![App Service](images/Screenshot-app-service.png)
+    ![App Service](images/Screenshot-app-service1.png)
+    ![App Service](images/Screenshot-app-service2.png)
 
 **Sanity check(list):**  `az webapp up` did quite a few things behind the scenes, so there are a few things to check for
 - The output contains the message `You can launch the app at ...`
@@ -176,7 +164,7 @@ Now go back to the Azure Cloud Shell and check to make sure the microservice act
 
 ![](images/Screenshot-final-test.png)
 
-As a fun bonus, the project contains a locust file `locustfile.py` which you can use to max out the F1 tier Azure App!
+As a fun bonus, the project contains a locust file `locustfile.py` which you can use to max out the F1 tier VM!
 
 ![](images/Screenshot-locust.png)
 
